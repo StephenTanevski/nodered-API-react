@@ -10,11 +10,13 @@ const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 const sequelize = new Sequelize('postgres://dbuser:iab3302022:5432/iab330nodered')
 
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+// Used to identify which db config to use 
+//  https://stackoverflow.com/questions/55951821/how-config-use-env-variable-object-keysand-readdirsync-are-useful-in-finding-mo
+// if (config.use_env_variable) {
+//   sequelize = new Sequelize(process.env[config.use_env_variable], config);
+// } else {
+//   sequelize = new Sequelize(config.database, config.username, config.password, config);
+// }
 
 fs
   .readdirSync(__dirname)

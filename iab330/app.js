@@ -6,7 +6,7 @@ var _ = require('underscore');
 var multer  = require('multer');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+// var users = require('./routes/users');
 
 var app = express();
 
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+// app.use('/users', users);
 var done=false;
 
 app.use(multer({ dest: './uploads/',
@@ -83,6 +83,7 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+module.exports = router;
 
 
 var express = require('express');
