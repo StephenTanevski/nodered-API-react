@@ -1,0 +1,23 @@
+.container2{
+    display: grid;
+    height: 90vh;
+    grid-template-columns: 0.4fr 1fr 0.1fr 1fr 0.4fr;
+    grid-template-rows: 1.2fr;
+}
+
+#available{
+    background-color: aliceblue;
+    border-radius: 50px;
+    overflow: scroll;
+}
+
+#unavailable{
+    background-color: aliceblue;
+    border-radius: 50px;
+}
+
+
+
+#center {
+    text-align: center;
+}
