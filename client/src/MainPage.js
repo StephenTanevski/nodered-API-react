@@ -97,4 +97,4 @@ function MainPage(){
     </div>
 }
 
-export default Main;
+export default MainPage;
