@@ -1,0 +1,119 @@
+.container{
+    display: grid;
+    height: 92vh;
+    grid-template-columns: 0.4fr 0.6fr 0.6fr 1fr 0.4fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr 0.1fr;
+    grid-template-areas: 
+        ". cam cam temp . "
+        ". past past info . "
+        ". future future info . "
+        ". . . footer .";
+    grid-gap: 0.5rem
+}
+
+.center {
+    text-align: center;
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #E5F4FF;
+    scrollbar-width: thin;         
+}
+
+#cam{
+    background: linear-gradient(#646EB6 11%, #7781D1 11%);
+    color: white;
+    grid-area: cam;
+    border-radius: 60px;
+    padding-left: 3rem;
+}
+
+#temp{
+    display: flex;
+    background: linear-gradient(#C7D4DC 11%, #E0EDF6 11%);
+    grid-area: temp;
+    border-radius: 60px;
+    padding-left: 3rem;
+}
+
+#info{
+    background: linear-gradient(#9DB4C2 10%, #B0C8D8 10%);
+    grid-area: info;
+    border-radius: 60px;
+    padding-left: 3rem;
+}
+
+#past{
+    background: linear-gradient(#5a8197 20%, #6690A9 20%);
+    grid-area: past;
+    border-radius: 60px;
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+    color: white;
+}
+
+#future{
+    background: linear-gradient(#4d6c7e 20%, #5B7E92 20%);
+    grid-area: future;
+    border-radius: 60px;
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+    color: white;
+}
+
+#footer{
+    grid-area: footer;
+    border-radius: 60px;
+    text-align: end;
+}
+
+#tempinfo{
+    display: flex;
+    align-items: center;
+    gap: 90px;
+}
+
+#tempnum{
+    font-size: 80px;
+    padding-right: 50px;
+    padding-top: 30px;
+}
+
+#body1{
+    padding-top: 20px;
+}
+
+@media only screen and (max-width:1200px){
+    .container{
+        grid-template-columns:0.3fr 1fr 1fr 0.3fr;
+        grid-template-rows: 2fr 1fr 1fr 0.2fr;
+        grid-template-areas: 
+        ". cam cam . "
+        ". info temp . "
+        ". past future . "
+        ". footer footer . ";
+    }
+    #temp{
+        background: linear-gradient(#C7D4DC 20%, #E0EDF6 20%);
+        grid-area: temp;
+        border-radius: 60px;
+        padding-left: 3rem;
+    }
+    #info{
+        background: linear-gradient(#9DB4C2 20%, #B0C8D8 20%);
+        grid-area: info;
+        border-radius: 60px;
+        padding-left: 3rem;
+    }
+    #tempinfo{
+        display: flex;
+        align-items: left;
+    }
+}

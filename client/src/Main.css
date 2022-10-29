@@ -1,0 +1,54 @@
+.container2{
+    display: grid;
+    height: 80vh;
+    grid-template-columns: 0.4fr 1fr 0.1fr 1fr 0.4fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 20px;
+}
+
+.app-header{
+    font-weight: bold;
+    padding: 0.4rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E5F4FF;
+    scrollbar-width: thin;         
+}
+
+#title1{
+    background-color: #AFDCFF;
+    border-radius: 50px;
+}
+
+#title2{
+    background-color: #AFDCFF;
+    border-radius: 50px;
+}
+
+
+#available{
+    background-color: aliceblue;
+    border-radius: 50px;
+    height: 60rem;
+    padding-top: 2rem;
+    overflow-y: auto;
+}
+
+#unavailable{
+    background-color: aliceblue;
+    border-radius: 50px;
+    height: 60rem;
+    padding-top: 2rem;
+    overflow-y: auto;
+}
+
+#center {
+    text-align: center;
+}
+
+#mainButtons{
+    text-align: right;
+}
+
