@@ -3,7 +3,7 @@ const {Client} = require('pg')
 const client = new Client({
     user: "postgres",
     host: "localhost",
-    database: "sequelize_db",
+    database: "iab330nodered",
     password: "postgres",
     port: 5432,
 })
