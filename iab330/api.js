@@ -11,6 +11,10 @@ app.listen(3300, ()=>{
 
 client.connect();
 
+const cors = require('cors');
+app.use(cors());
+app.options('*', cors());
+
 app.get('/', (req, res)=>{
     client.query(`Select * from room`, (err, result)=>{
         if(!err){

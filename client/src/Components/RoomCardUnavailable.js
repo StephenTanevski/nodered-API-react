@@ -8,6 +8,8 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Grid from '@mui/material/Grid'
+import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 function RoomCard(props){
     const ExpandMore = styled((props) => {
@@ -49,6 +51,7 @@ function RoomCard(props){
                             </Typography>
                         </CardContent>
                         <CardActions>
+                            <Button size="small" component={Link} to={`/overview/${ props.room.id}`}>View Room</Button> {/*component={Link} to={`/overview/${ props.user.id}`}*/}
                             <ExpandMore
                                 expand={expanded}
                                 onClick={handleExpandClick}
