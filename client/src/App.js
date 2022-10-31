@@ -7,24 +7,6 @@ import Overview from './Overview';
 
 function App(){
     // Possibly add id params; have to properply set up api
-    const url = 'http://localhost:3300/data'
-    const [roomData, setRoomData] = useState(null)
-
-    let content = null
-
-    useEffect(() =>{        
-        axios.get(url)
-        .then(response => {
-            setRoomData(response.data)
-        })
-    }, [url])
-
-    if(roomData){
-        content = 
-        <div>
-            <Main />
-        </div>
-    }
 
     return <div className="App">
     <Routes>

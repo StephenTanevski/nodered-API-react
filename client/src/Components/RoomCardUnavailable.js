@@ -27,55 +27,56 @@ function RoomCard(props){
     const handleExpandClick = () => {
     setExpanded(!expanded);
     };
+    if(props.room.temperature >= 27){
+        return (
+            <Grid
+                container
+                spacing={0}
+                direction="column"
+                alignItems="center"
+                justify="center"
+                style={{ minHeight: '13vh' }}
     
-    return (
-        <Grid
-            container
-            spacing={0}
-            direction="column"
-            alignItems="center"
-            justify="center"
-            style={{ minHeight: '13vh' }}
-
-        >
-            <Grid item xs={3}>
-                <Card style={{ width: '40rem'}}>
-                    <CardContent>
-                        <Typography variant="h5" component="div">
-                        { props.user.name }
-                        </Typography>
-                        <Typography sx={{ mb: 0.4 }} color="text.secondary">
-                        Not available for use
-                        </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <ExpandMore
-                            expand={expanded}
-                            onClick={handleExpandClick}
-                            aria-expanded={expanded}
-                            aria-label="show more"
-                            >
-                            <ExpandMoreIcon />
-                        </ExpandMore>
-                    </CardActions>
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
+            >
+                <Grid item xs={3}>
+                    <Card style={{ width: '40rem'}}>
                         <CardContent>
-                            <Typography paragraph><b>Patient Information:</b></Typography>
-                            <Typography paragraph>
-                                Fusce at blandit sapien, non pulvinar odio. Fusce vel quam sit amet quam tristique dictum ut ac quam. Nulla ullamcorper nibh sagittis pellentesque molestie.
+                            <Typography variant="h5" component="div">
+                            { props.room.room }
                             </Typography>
-                            <Typography paragraph><b>Purpose of booking:</b></Typography>
-                            <Typography paragraph>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae eleifend dolor, nec interdum neque. Phasellus commodo velit enim. 
-                                Nullam nec urna lorem. Sed egestas dolor ac dolor pulvinar rhoncus. Phasellus fermentum enim eu sem interdum interdum. Etiam sodales nulla vel malesuada mollis. 
-                                Nulla cursus venenatis ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur vitae fringilla purus. Vivamus ultricies erat id metus egestas semper. 
+                            <Typography sx={{ mb: 0.4 }} color="text.secondary">
+                            Not available for use
                             </Typography>
                         </CardContent>
-                    </Collapse>
-                </Card>
+                        <CardActions>
+                            <ExpandMore
+                                expand={expanded}
+                                onClick={handleExpandClick}
+                                aria-expanded={expanded}
+                                aria-label="show more"
+                                >
+                                <ExpandMoreIcon />
+                            </ExpandMore>
+                        </CardActions>
+                        <Collapse in={expanded} timeout="auto" unmountOnExit>
+                            <CardContent>
+                                <Typography paragraph><b>Patient Information:</b></Typography>
+                                <Typography paragraph>
+                                    Fusce at blandit sapien, non pulvinar odio. Fusce vel quam sit amet quam tristique dictum ut ac quam. Nulla ullamcorper nibh sagittis pellentesque molestie.
+                                </Typography>
+                                <Typography paragraph><b>Purpose of booking:</b></Typography>
+                                <Typography paragraph>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae eleifend dolor, nec interdum neque. Phasellus commodo velit enim. 
+                                    Nullam nec urna lorem. Sed egestas dolor ac dolor pulvinar rhoncus. Phasellus fermentum enim eu sem interdum interdum. Etiam sodales nulla vel malesuada mollis. 
+                                    Nulla cursus venenatis ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur vitae fringilla purus. Vivamus ultricies erat id metus egestas semper. 
+                                </Typography>
+                            </CardContent>
+                        </Collapse>
+                    </Card>
+                </Grid>
             </Grid>
-        </Grid>
-    )
+        )
+    }
 }
 
 export default RoomCard;

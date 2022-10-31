@@ -8,32 +8,34 @@ import Grid from '@mui/material/Grid'
 import { Link } from 'react-router-dom';
 
 function RoomCard(props){
-    return (
-        <Grid
-            container
-            spacing={0}
-            direction="column"
-            alignItems="center"
-            justify="center"
-            style={{ minHeight: '13vh' }}
-        >
-            <Grid item xs={3}>
-                <Card style={{ width: '40rem'}}>
-                    <CardContent>
-                        <Typography variant="h5" component="div">
-                        { props.user.name }
-                        </Typography>
-                        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                        Currently available for use
-                        </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small" component={Link} to={`/overview/${ props.user.id}`}>Select Room</Button>
-                    </CardActions>
-                </Card>
+    if(props.room.temperature < 27){
+        return (
+            <Grid
+                container
+                spacing={0}
+                direction="column"
+                alignItems="center"
+                justify="center"
+                style={{ minHeight: '13vh' }}
+            >
+                <Grid item xs={3}>
+                    <Card style={{ width: '40rem'}}>
+                        <CardContent>
+                            <Typography variant="h5" component="div">
+                            { props.room.room }
+                            </Typography>
+                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                            Currently available for use
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small" >Select Room</Button> {/*component={Link} to={`/overview/${ props.user.id}`}*/}
+                        </CardActions>
+                    </Card>
+                </Grid>
             </Grid>
-        </Grid>
-    )
+        )
+    }
 }
 
 export default RoomCard;

@@ -8,29 +8,29 @@ import Button from '@mui/material/Button';
 
 
 function MainPage(){
-    const url = `https://jsonplaceholder.typicode.com/users/` 
-    const [users, setUsers] = useState({
+    const url = 'http://localhost:3300/' 
+    const [rooms, setRooms] = useState({
         loading: false,
         data: null,
         error: false
     })
 
     useEffect(() => {
-        setUsers({
+        setRooms({
             loading: false,
             data: null,
             error: false
         })
         axios.get(url)
             .then(response => {
-                setUsers({
+                setRooms({
                     loading: false,
                     data: response.data,
                     error: false
                 })
             })
             .catch(() =>{
-                setUsers({
+                setRooms({
                     loading: false,
                     data: null,
                     error: true
@@ -41,22 +41,22 @@ function MainPage(){
     let content = null
     let content2 = null
 
-    if(users.data){
+    if(rooms.data){
         content = 
-        users.data.map((user, key) =>
+        rooms.data.map((room, key) =>
             <div>
                 <RoomCard
-                    user={user}
+                    room={room}
                 />
             </div>
         )
     }
-    if(users.data){
+    if(rooms.data){
         content2 = 
-        users.data.map((user, key) =>
+        rooms.data.map((room, key) =>
             <div>
                 <RoomCardUnavailable
-                    user={user}
+                    room={room}
                 />
             </div>
         )
