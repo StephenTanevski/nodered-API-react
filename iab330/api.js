@@ -11,8 +11,8 @@ app.listen(3300, ()=>{
 
 client.connect();
 
-app.get('/data', (req, res)=>{
-    client.query(`Select * from iab330`, (err, result)=>{
+app.get('/overview', (req, res)=>{
+    client.query(`Select * from room`, (err, result)=>{
         if(!err){
             res.send(result.rows);
         }
