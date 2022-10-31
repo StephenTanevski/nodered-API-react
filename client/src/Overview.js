@@ -21,7 +21,7 @@ function Overview(){
     }, [url])
     
     // Room data
-    const roomUrl = 'http://localhost:3300/overview'
+    const roomUrl = 'http://localhost:3300/'
     const [roomData, setRoomData] = useState(null)
 
     let content = null
@@ -34,10 +34,10 @@ function Overview(){
     }, [roomUrl])
 
  
-    if (user, roomData){
+    if (user){
         return <div>
         <div class='center'>
-            <h2>Room: {user.name}</h2>
+            <h2>Room: {user.name} {roomData}</h2>
         </div>
         <div class='container'>
             <div id='cam'>
@@ -55,7 +55,7 @@ function Overview(){
                         size="large"
                         height="250"
                     />
-                    <div id='tempnum'><h1>27℃ {roomData}</h1></div>
+                    <div id='tempnum'><h1>27℃</h1></div>
                 </div>
             </div>
             <div id='past'>
