@@ -15,6 +15,10 @@ function MainPage(){
         error: false
     })
 
+    function refreshPage() {
+        window.location.reload(false);
+    }
+
     useEffect(() => {
         setRooms({
             loading: false,
@@ -90,7 +94,7 @@ function MainPage(){
         </div>
         <div id='blank'></div>
         <div id='mainButtons'>
-            <Button variant='outlined' id='mainButtons'>Refresh Rooms</Button>
+            <Button variant='outlined' id='mainButtons' onClick={refreshPage}>Refresh Rooms</Button>
         </div>
         </div>
         

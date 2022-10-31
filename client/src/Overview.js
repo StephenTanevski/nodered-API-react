@@ -34,7 +34,7 @@ function Overview(){
                 <div id='tempinfo'>
                     <Thermometer
                         theme="light"
-                        value="27"
+                        value={room.temperature}
                         max="40"
                         steps="4"
                         format="°C"
