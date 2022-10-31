@@ -11,7 +11,7 @@ app.listen(3300, ()=>{
 
 client.connect();
 
-app.get('/overview', (req, res)=>{
+app.get('/', (req, res)=>{
     client.query(`Select * from room`, (err, result)=>{
         if(!err){
             res.send(result.rows);
