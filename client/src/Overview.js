@@ -10,34 +10,20 @@ import Thermometer from 'react-thermometer-component'
 function Overview(){
     // Placeholder Json
     const { id } = useParams()
-    const url = `https://jsonplaceholder.typicode.com/users/${id}` 
-    const [user, setUser] = useState(null)
+    const url = `http://localhost:3300/${id}` 
+    const [room, setRoom] = useState(null)
     
     useEffect(() => {
         axios.get(url)
         .then(response => {
-            setUser(response.data)
+            setRoom(response.data)
         })
     }, [url])
-    
-    // Room data
-    const roomUrl = 'http://localhost:3300/'
-    const [roomData, setRoomData] = useState(null)
-
-    let content = null
-
-    useEffect(() =>{        
-        axios.get(roomUrl)
-        .then(response => {
-            setRoomData(response.data)
-        })
-    }, [roomUrl])
-
  
-    if (user){
+    if (room){
         return <div>
         <div class='center'>
-            <h2>Room: {user.name} {roomData}</h2>
+            <h2>Room {room.room}</h2>
         </div>
         <div class='container'>
             <div id='cam'>
@@ -55,7 +41,7 @@ function Overview(){
                         size="large"
                         height="250"
                     />
-                    <div id='tempnum'><h1>27℃</h1></div>
+                    <div id='tempnum'><h1>{room.temperature}℃</h1></div>
                 </div>
             </div>
             <div id='past'>

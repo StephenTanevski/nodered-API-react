@@ -22,14 +22,14 @@ function RoomCard(props){
                     <Card style={{ width: '40rem'}}>
                         <CardContent>
                             <Typography variant="h5" component="div">
-                            { props.room.room }
+                            Room { props.room.room }
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
                             Currently available for use
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size="small" >Select Room</Button> {/*component={Link} to={`/overview/${ props.user.id}`}*/}
+                            <Button size="small" component={Link} to={`/overview/${ props.room.id}`}>Select Room</Button> {/*component={Link} to={`/overview/${ props.user.id}`}*/}
                         </CardActions>
                     </Card>
                 </Grid>

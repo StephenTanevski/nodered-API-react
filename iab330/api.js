@@ -19,3 +19,15 @@ app.get('/', (req, res)=>{
     });
     client.end;
 })
+
+app.get('/:id', async (req, res) => {
+    const {id} = req.params
+    try {
+        const room = await client.query(`Select * from room Where id = $1`, [
+            id
+        ]);
+    res.json(room.rows[0]);
+    } catch (err) {
+        console.error(err.message)
+    }
+});

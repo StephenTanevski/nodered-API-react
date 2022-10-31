@@ -42,7 +42,7 @@ function RoomCard(props){
                     <Card style={{ width: '40rem'}}>
                         <CardContent>
                             <Typography variant="h5" component="div">
-                            { props.room.room }
+                            Room { props.room.room }
                             </Typography>
                             <Typography sx={{ mb: 0.4 }} color="text.secondary">
                             Not available for use
