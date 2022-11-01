@@ -2,8 +2,8 @@ version: '3.7'
 
 services:
 
-  sample:
-    container_name: sample
+  nodered-client:
+    container_name: nodered-client
     build:
       context: .
       dockerfile: Dockerfile
