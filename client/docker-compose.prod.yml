@@ -2,8 +2,8 @@ version: '3.7'
 
 services:
 
-  sample-prod:
-    container_name: sample-prod
+  nodered-client-prod:
+    container_name: nodered-client-prod
     build:
       context: .
       dockerfile: Dockerfile.prod
