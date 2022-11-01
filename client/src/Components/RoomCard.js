@@ -16,7 +16,7 @@ function RoomCard(props){
                 direction="column"
                 alignItems="center"
                 justify="center"
-                style={{ minHeight: '13vh' }}
+                style={{ minHeight: '14vh' }}
             >
                 <Grid item xs={3}>
                     <Card style={{ width: '40rem'}}>
@@ -25,7 +25,8 @@ function RoomCard(props){
                             Room { props.room.room }
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                            Currently available for use
+                            Currently available for use <br></br>
+                            {props.room.timestamp}
                             </Typography>
                         </CardContent>
                         <CardActions>

@@ -23,7 +23,7 @@ function Overview(){
     if (room){
         return <div>
         <div class='center'>
-            <h2>Room {room.room}</h2>
+            <h2>Room {room.room} - {room.timestamp}</h2>
         </div>
         <div class='container'>
             <div id='cam'>
