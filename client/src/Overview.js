@@ -8,9 +8,8 @@ import Thermometer from 'react-thermometer-component'
 
 
 function Overview(){
-    // Placeholder Json
-    const { id } = useParams()
-    const url = `http://localhost:3300/${id}` 
+    const { id } = useParams() /* creates variable called id that returns the url parameters. */
+    const url = `http://localhost:3300/${id}` /* fetches data according to the room id */
     const [room, setRoom] = useState(null)
     
     useEffect(() => {
@@ -23,7 +22,7 @@ function Overview(){
     if (room){
         return <div>
         <div class='center'>
-            <h2>Room {room.room} - {room.timestamp}</h2>
+            <h2>Room {room.room} - {room.timestamp}</h2> {/* displays room name/number and timestamp. */}
         </div>
         <div class='container'>
             <div id='cam'>
@@ -32,6 +31,7 @@ function Overview(){
             <div id='temp'>
                 <h2>Temp</h2>
                 <div id='tempinfo'>
+                    {/* therometer component for visual display of temperature. */}
                     <Thermometer
                         theme="light"
                         value={room.temperature}
@@ -40,11 +40,12 @@ function Overview(){
                         format="°C"
                         size="large"
                         height="250"
-                    />
-                    <div id='tempnum'><h1>{room.temperature}℃</h1></div>
+                    />  
+                    <div id='tempnum'><h1>{room.temperature}℃</h1></div> {/* displays room temperature */}
                 </div>
             </div>
             <div id='past'>
+                {/* Placeholder bookings as data does not simulate this. */}
                 <h3>Past Bookings</h3>
                 <div id='body1'>
                     [ 12:00 - 14:00 ], 11/08/22, Patient Consulting<br></br>
@@ -71,7 +72,7 @@ function Overview(){
             <div id='footer'>
                 <Button style={{
                     backgroundColor: "#21b6ae"
-                    }} variant='contained' id='mainButtons' component={Link} to={`/`}>Back</Button>
+                    }} variant='contained' id='mainButtons' component={Link} to={`/`}>Back</Button> {/* routes back to the mainpage. */}
                 <div class='divider'> </div> 
             </div>
 

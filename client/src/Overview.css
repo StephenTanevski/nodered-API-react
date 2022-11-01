@@ -1,9 +1,10 @@
+/* container is the grid layout for overview page. */
 .container{
     display: grid;
     height: 92vh;
     grid-template-columns: 0.4fr 0.6fr 0.6fr 1fr 0.4fr;
     grid-template-rows: 1fr 0.5fr 0.5fr 0.1fr;
-    grid-template-areas: 
+    grid-template-areas: /* grid template areas allows us to specify what content will be placed in each row and column. */
         ". cam cam temp . "
         ". past past info . "
         ". future future info . "
@@ -90,11 +91,12 @@ body {
     padding-top: 20px;
 }
 
+/* responsiveness added when screen width is 1200px or lower. */
 @media only screen and (max-width:1200px){
     .container{
         grid-template-columns:0.3fr 1fr 1fr 0.3fr;
         grid-template-rows: 2fr 1fr 1fr 0.2fr;
-        grid-template-areas: 
+        grid-template-areas: /* changed grid template to better fit width. */
         ". cam cam . "
         ". info temp . "
         ". past future . "

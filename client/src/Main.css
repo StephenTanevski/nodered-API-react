@@ -1,8 +1,9 @@
+/* container2 creates the grid layout for the main page. */
 .container2{
     display: grid;
     height: 80vh;
-    grid-template-columns: 0.4fr 1fr 0.1fr 1fr 0.4fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 0.4fr 1fr 0.1fr 1fr 0.4fr; /* 5 columns sized according to fr */
+    grid-template-rows: 1fr 1fr; /* 2 rows sized according to fr. */
     grid-row-gap: 20px;
 }
 
@@ -33,7 +34,7 @@ body {
     border-radius: 50px;
     height: 60rem;
     padding-top: 2rem;
-    overflow-y: auto;
+    overflow-y: auto; /* automatically enables scroll feature if a lot of rooms are displayed. */
 }
 
 #unavailable{

@@ -11,7 +11,9 @@ import Grid from '@mui/material/Grid'
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 
+// passes the selected room as a prop.
 function RoomCard(props){
+    // Expand animation for unavailable rooms. 
     const ExpandMore = styled((props) => {
         const { expand, ...other } = props;
         return <IconButton {...other} />;
@@ -23,12 +25,15 @@ function RoomCard(props){
         }),
     }));
 
-    
+    //create useState for expand button. Automatically set to false
     const [expanded, setExpanded] = React.useState(false);
 
+    // if expand button is click than expand card to show relavent information. 
     const handleExpandClick = () => {
     setExpanded(!expanded);
     };
+
+    // rooms are considered unavailable if temperature is equal or more than 27.
     if(props.room.temperature >= 27){
         return (
             <Grid
@@ -44,25 +49,26 @@ function RoomCard(props){
                     <Card style={{ width: '40rem'}}>
                         <CardContent>
                             <Typography variant="h5" component="div">
-                            Room { props.room.room }
+                            Room { props.room.room } {/* displays room name/number from API. */}
                             </Typography>
                             <Typography sx={{ mb: 0.4 }} color="text.secondary">
                             Not available for use<br></br>
-                            {props.room.timestamp}
+                            {props.room.timestamp} 
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size="small" component={Link} to={`/overview/${ props.room.id}`}>View Room</Button> {/*component={Link} to={`/overview/${ props.user.id}`}*/}
+                            <Button size="small" component={Link} to={`/overview/${ props.room.id}`}>View Room</Button> {/* button links to overview page where it is dynamically routed according to room id. */}
                             <ExpandMore
                                 expand={expanded}
                                 onClick={handleExpandClick}
                                 aria-expanded={expanded}
                                 aria-label="show more"
-                                >
+                                > {/* button links to overview page where it is dynamically routed according to room id. */}
                                 <ExpandMoreIcon />
                             </ExpandMore>
                         </CardActions>
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
+                            {/* information that is displayed after expanding card */}
                             <CardContent>
                                 <Typography paragraph><b>Patient Information:</b></Typography>
                                 <Typography paragraph>

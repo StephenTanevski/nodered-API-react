@@ -9,16 +9,19 @@ import Button from '@mui/material/Button';
 
 function MainPage(){
     const url = 'http://localhost:3300/' 
+    /* create rooms variable and method for setting rooms called setRooms. */
     const [rooms, setRooms] = useState({
         loading: false,
         data: null,
         error: false
     })
 
+    /* function for refreshing page so data can be fetched again. */
     function refreshPage() {
         window.location.reload(false);
     }
 
+    /* if url changes than the code within useeffect will rerun */
     useEffect(() => {
         setRooms({
             loading: false,
@@ -42,9 +45,11 @@ function MainPage(){
             })
     }, [url])
 
+    /* setting variables to display the data. */
     let content = null
     let content2 = null
 
+    /* if there is data is rooms it will display a card of it. */
     if(rooms.data){
         content = 
         rooms.data.map((room, key) =>
@@ -94,7 +99,8 @@ function MainPage(){
         </div>
         <div id='blank'></div>
         <div id='mainButtons'>
-            <Button variant='outlined' id='mainButtons' onClick={refreshPage}>Refresh Rooms</Button>
+            {/* clicking refresh rooms button will refresh page resulting in fetching the data again. */}
+            <Button variant='outlined' id='mainButtons' onClick={refreshPage}>Refresh Rooms</Button> 
         </div>
         </div>
         
