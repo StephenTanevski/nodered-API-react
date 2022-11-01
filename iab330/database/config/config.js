@@ -7,6 +7,7 @@ if (!process.env.HOST) {
   });
 }
 
+// configuring to communicate to postgres
 module.exports = {
   host: process.env.DATABASE_HOST,
   username: process.env.DATABASE_USER,

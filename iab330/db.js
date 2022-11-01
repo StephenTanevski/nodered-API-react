@@ -1,5 +1,6 @@
 const {Client} = require('pg')
 
+// Configured to the postgres pgadmin
 const client = new Client({
     user: "postgres",
     host: "localhost",

@@ -1,5 +1,6 @@
 const models = require('../database/models');
 
+// get all rows in room to then place in a json and returns
 const getAllRooms = async (req, res) => {
   try {
     const post = await models.room.findAll();
